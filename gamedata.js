@@ -200,7 +200,7 @@ const gameData = [
     roomID: 26,
     gameText:
       "You picked up the diary and open to read the contents. You realised this is a diary of a woman used to live in Torag, and she was outcasted as a witch for her knowledge of spells. ",
-    buttons: [{ text: "Return", returnValue: 28 }],
+    buttons: [{ text: "Return", returnValue: 25 }],
     item: "diary",
   },
   {
