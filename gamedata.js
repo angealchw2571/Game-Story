@@ -12,7 +12,7 @@ const gameData = [
     roomID: 2,
     gameText:
       "Welcome to The Wandering Forest... You're an adventurer in the lands of Torag, a small coastal town where the population barely exceeds 300 men. You were on a quest to find your father, after his written note before he mysteriously disappeared.  ",
-    buttons: [{ text: "Continue", returnValue: 888 }],
+    buttons: [{ text: "Continue", returnValue: 3 }],
   },
   {
     roomID: 3,
