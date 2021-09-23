@@ -18,11 +18,13 @@ What in my process and approach to this project went well that I would repeat ne
 Code and Code Design
 What in my code and program design in the project would I do differently next time?
 
-    I would want to attempt callback functions and return values, as well as using parameters in functions to help in conditionals loops. These were things I unknowingly avoided during the process.
+    I would want to attempt callback functions and return values, as well as using parameters in functions to help in conditionals loops. These were things I unknowingly avoided during the process. These limited my code to only stick with empty functions but run on global variables. 
 
 What in my code and program design in the project went well? Is there anything I would do the same next time?
 
-    I was able to 
+    Because I was able to decide the minimum features, and I designed my logic code around the gameData file, it was easy for myself to select different the different data. Hence, when I wanted to add more features, it was a simple edit to the gameData file and then selecting it from my script file. 
+
+    Another part of the code which I was very satified with, was the animation of the dice rolling. I was able to use setInterval as well as setTimeout to create a dice rolling animation as part of the dice mechanism. 
 
 For each, please include code examples.
 
