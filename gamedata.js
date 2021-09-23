@@ -1,7 +1,8 @@
-const CHOCOLATE = "chocolate"
-const VIALS = "vials of solution"
+const CHOCOLATE = "chocolate";
+const VIALS = "vials of solution";
 let backpack = [CHOCOLATE, "maggie mee", "yogurt", "curry"];
-let playerStats = {HP: 100, ATK: 50, DEF: 25}
+let playerStats = { HP: 100, ATK: 50, DEF: 25 };
+let enemyStats = { HP: 500, ATK: 50, DEF: 100 };
 const gameData = [
   {
     roomID: 1,
@@ -12,7 +13,10 @@ const gameData = [
     roomID: 2,
     gameText:
       "Welcome to The Wandering Forest... You're an adventurer in the lands of Torag, a small coastal town where the population barely exceeds 300 men. You were on a quest to find your father, after his written note before he mysteriously disappeared.  ",
-    buttons: [{ text: "Continue", returnValue: 3 }],
+    buttons: [
+      { text: "Continue", returnValue: 3 },
+      { text: "Battle", returnValue: 888 },
+    ],
   },
   {
     roomID: 3,
@@ -22,7 +26,7 @@ const gameData = [
       { text: "Lie down and pretend to be asleep", returnValue: 4 },
       { text: "Grab your belongings and bolt to the backdoor", returnValue: 5 },
     ],
-    itemRemove: "chocolate"
+    itemRemove: "chocolate",
   },
   {
     roomID: 4,
@@ -33,7 +37,7 @@ const gameData = [
       { text: "Odd Number", returnValue: 7 },
     ],
     dice: true,
-    itemRemove: "curry"
+    itemRemove: "curry",
   },
   {
     roomID: 5,
@@ -164,7 +168,7 @@ const gameData = [
     gameText:
       "You show the vials to the soldiers. The soldiers exclaim this is the antidote for the recent plague that has overwhelmed the town! They questioned you about where you found them and you explained.",
     buttons: [{ text: "continue", returnValue: 22 }],
-    itemRemove: VIALS
+    itemRemove: VIALS,
   },
   {
     roomID: 22,
@@ -194,15 +198,27 @@ const gameData = [
   },
   {
     roomID: 26,
-    gameText: "You picked up the diary and open to read the contents. You realised this is a diary of a woman used to live in Torag, and she was outcasted as a witch for her knowledge of spells. ",
+    gameText:
+      "You picked up the diary and open to read the contents. You realised this is a diary of a woman used to live in Torag, and she was outcasted as a witch for her knowledge of spells. ",
     buttons: [{ text: "Return", returnValue: 28 }],
-    item: "diary"
+    item: "diary",
   },
   {
     roomID: 888,
-    gameText: "Battle",
-    buttons: [{ text: "run", returnValue: 999 }],
-    battle: true
+    gameText: "You fight the enemy",
+    buttons: [],
+    battleBtn: [{ text: "Attack!!!" }, { text: "Attack the enemy!" }],
+    battle: true,
+  },
+  {
+    roomID: 996,
+    gameText: "You Win",
+    buttons: [{ text: "Restart", returnValue: 1 }],
+  },
+  {
+    roomID: 997,
+    gameText: "You Died",
+    buttons: [{ text: "Restart", returnValue: 999 }],
   },
   {
     roomID: 998,
