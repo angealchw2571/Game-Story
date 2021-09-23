@@ -222,7 +222,7 @@ const gameData = [
   },
   {
     roomID: 998,
-    gameText: "Credits - Angeal Cheong",
+    gameText: "Music: I Have Sinned - Creepy Mysterious Free Music - GioeleFazzeri ",
     buttons: [{ text: "Return to main screen", returnValue: 1 }],
   },
   {
