@@ -303,9 +303,6 @@ const RoomDetails = (getRoomID) => {
   $(".dicePanel").fadeIn(8000);
 };
 
-// var mySound;
-// mySound = new sound("music.mp3");
-// mySound.play();
 
 
 
