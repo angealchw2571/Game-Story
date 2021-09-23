@@ -137,8 +137,8 @@ const printBattleBtn = (currentRoomID) => {
   // for (i = 0; i < currentRoomID.battleBtn.length; i++) {
   const nextBtnText = currentRoomID.battleBtn[0].text;
   const nextBtnText2 = currentRoomID.battleBtn[1].text;
-  const createNewBtn = $("<button>").addClass("button").text(nextBtnText);
-  const createNewBtn2 = $("<button>").addClass("button").text(nextBtnText2);
+  const createNewBtn = $("<button>").addClass("button").text(nextBtnText).css("display", "none");
+  const createNewBtn2 = $("<button>").addClass("button").text(nextBtnText2).css("display", "none");
   createNewBtn.click(() => statsUpdaterPlayer());
   createNewBtn2.click(() => statsUpdaterEnemy());
   $(".first").append(createNewBtn2, $(".button"));
