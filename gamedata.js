@@ -113,7 +113,7 @@ const gameData = [
       "You walk away from the dedicated path. You notice a diary on the ground.",
     buttons: [
       { text: "Pick it up", returnValue: 26 },
-      { text: "Leave it", returnValue: 27 },
+      { text: "Leave it", returnValue: 25 },
     ],
   },
   {
