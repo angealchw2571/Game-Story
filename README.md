@@ -44,5 +44,16 @@ Code snippet up to 20 lines.
 Code design documents or architecture drawings / diagrams.
 SEI Post Mortem
 What habits did I use during this unit that helped me?
+
+    Console.log-ing, using const for variables.
+
 What habits did I have during this unit that I can improve on?
+
+    Maintainability, and DRY. I tend to type out everything before I try to automate them.
+
 How is the overall level of the course during this unit? (instruction, course materials, etc.)
+
+    I think it's manageable, considering I was completely new to all these 2 weeks prior, it is amazing
+    to see that I was able to code all these in such a short span of time. Course materials were good
+    to direct me to a certain direction, but most understanding and learning happened when I googled
+    them myself. 
