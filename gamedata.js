@@ -1,6 +1,9 @@
-const CHOCOLATE = "chocolate";
+const CHOCOLATE = "chocolate"; //! testing purposes
+const MAGGIE = "maggie mee"; //! testing purposes
+const YOGURT = "yogurt";  //! testing purposes
+const CURRY = "curry";  //! testing purposes
 const VIALS = "vials of solution";
-let backpack = [CHOCOLATE, "maggie mee", "yogurt", "curry"];
+let backpack = [CHOCOLATE, MAGGIE, YOGURT, CURRY];
 let playerStats = { HP: 100, ATK: 50, DEF: 25 };
 let enemyStats = { HP: 500, ATK: 50, DEF: 100 };
 const gameData = [

@@ -78,7 +78,6 @@ const buttonPrinter = (currentRoomID) => {
       .css("display", "none");
     if (currentRoomID.buttons[i].hasOwnProperty("requireItem") === false) {
       //! if it doesn't require items, it will print the button
-      // createNewBtn.attr("onclick", "RoomDetails(" + subsequentRoomID + ")");
       createNewBtn.click(() => RoomDetails(subsequentRoomID));
       $("article").append(createNewBtn);
     } else if (
@@ -86,7 +85,6 @@ const buttonPrinter = (currentRoomID) => {
       backpack.includes(currentRoomID.buttons[i].requireItem)
     ) {
       //! it requires items and you have the item in backpack
-      // createNewBtn.attr("onclick", "RoomDetails(" + subsequentRoomID + ")");
       createNewBtn.click(() => RoomDetails(subsequentRoomID));
       $("article").append(createNewBtn);
     }
@@ -128,7 +126,7 @@ const removeAllBattle = () => {
   $(".enemy").remove();
 };
 
-//! ============ Battle Stuff ===============================================
+//! ======================================== Battle Stuff ===============================================
 
 const printBattleBtn = (currentRoomID) => {
   // const nextRoomID = gameData.find((element) => element.roomID === getRoomID);
@@ -137,8 +135,14 @@ const printBattleBtn = (currentRoomID) => {
   // for (i = 0; i < currentRoomID.battleBtn.length; i++) {
   const nextBtnText = currentRoomID.battleBtn[0].text;
   const nextBtnText2 = currentRoomID.battleBtn[1].text;
-  const createNewBtn = $("<button>").addClass("button").text(nextBtnText).css("display", "none");
-  const createNewBtn2 = $("<button>").addClass("button").text(nextBtnText2).css("display", "none");
+  const createNewBtn = $("<button>")
+    .addClass("button")
+    .text(nextBtnText)
+    .css("display", "none");
+  const createNewBtn2 = $("<button>")
+    .addClass("button")
+    .text(nextBtnText2)
+    .css("display", "none");
   createNewBtn.click(() => statsUpdaterPlayer());
   createNewBtn2.click(() => statsUpdaterEnemy());
   $(".first").append(createNewBtn2, $(".button"));
@@ -261,27 +265,35 @@ const statsUpdaterPlayer = () => {
   HPchecker();
 };
 
+const removeStuff = (nextRoomID) => {
+  //! removes all battle stuff if present
+  removeAllBattle();
+
+  //! remove old buttons
+  removeButtons();  
+  
+  //! if there are any dice mechanism, remove them
+  removeDiceStuff();
+
+//! checks if there are items needs to be removed and updates the backpack
+  removeItemFromBackpack(nextRoomID);
+
+}
+
+
 const RoomDetails = (getRoomID) => {
   const nextRoomID = gameData.find((element) => element.roomID === getRoomID);
   //! checks if room ID = 1 and reset the game
   resetGame(nextRoomID);
 
-  removeAllBattle();
-
-  //! remove old buttons
-  removeButtons();
+  //! removes stuff
+  removeStuff(nextRoomID);
 
   //! grabs the RoomID and appends the Text box
   gameTextDisplay(nextRoomID);
 
-  //! if there are any dice mechanism, remove them
-  removeDiceStuff();
-
   //! checks if there are items available in the room and adds them into the backpack array
   addItemToBackpack(nextRoomID);
-
-  //! checks if there are items needs to be removed and updates the backpack
-  removeItemFromBackpack(nextRoomID);
 
   //! checks if there new buttons and appends them
   buttonPrinter(nextRoomID);
@@ -296,15 +308,10 @@ const RoomDetails = (getRoomID) => {
   battle(nextRoomID);
 
   console.log(nextRoomID.roomID);
-  // $("article").css("display", "none")
-  // $("article").fadeIn(3000)
   $("h1").fadeIn(2000);
   $("button").fadeIn(4000);
   $(".dicePanel").fadeIn(8000);
 };
-
-
-
 
 const main = () => {};
 
