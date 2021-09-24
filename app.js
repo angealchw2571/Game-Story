@@ -126,6 +126,22 @@ const removeAllBattle = () => {
   $(".enemy").remove();
 };
 
+//? removes all stuff
+const removeStuff = (nextRoomID) => {
+  //! removes all battle stuff if present
+  removeAllBattle();
+
+  //! remove old buttons
+  removeButtons();  
+  
+  //! if there are any dice mechanism, remove them
+  removeDiceStuff();
+
+//! checks if there are items needs to be removed and updates the backpack
+  removeItemFromBackpack(nextRoomID);
+
+}
+
 //! ======================================== Battle Stuff ===============================================
 
 const printBattleBtn = (currentRoomID) => {
@@ -265,20 +281,7 @@ const statsUpdaterPlayer = () => {
   HPchecker();
 };
 
-const removeStuff = (nextRoomID) => {
-  //! removes all battle stuff if present
-  removeAllBattle();
-
-  //! remove old buttons
-  removeButtons();  
-  
-  //! if there are any dice mechanism, remove them
-  removeDiceStuff();
-
-//! checks if there are items needs to be removed and updates the backpack
-  removeItemFromBackpack(nextRoomID);
-
-}
+//* ================================== Main function ====================================================
 
 
 const RoomDetails = (getRoomID) => {
